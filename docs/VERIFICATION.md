@@ -18,4 +18,4 @@ The page generator completed successfully, and JavaScript passed Node's syntax c
 
 ## Limits
 
-These are static checks and browser smoke checks, not a full cross-browser, screen-reader, performance or accessibility audit. The site is local and the repository remains private. No production hosting, forms, mailing-list submission, donations or third-party services were activated. Original copy and media are archival; original authorship and rights are not reassigned by this restoration.
+These are static checks and browser smoke checks, not a full cross-browser, screen-reader, performance or accessibility audit. The website was verified locally; GitHub showed its repository as public at publication. No production hosting, forms, mailing-list submission, donations or third-party services were activated. Original copy and media are archival; original authorship and rights are not reassigned by this restoration.

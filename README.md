@@ -44,4 +44,4 @@ The generator uses Python's standard library; the website itself is static. CI r
 
 [Verification](docs/VERIFICATION.md) records completed checks and remaining limits. [Provenance](docs/PROVENANCE.md) explains preserved material, third-party history and the restoration work.
 
-Existing history is retained. The October 2026 design and implementation were developed with Codex assistance, directed and reviewed by Favour Ojo. Campaign copy/media and recovered third-party source are not claimed as original sole-authored work. The repository remains private; no public deployment is claimed.
+Existing history is retained. The October 2026 design and implementation were developed with Codex assistance, directed and reviewed by Favour Ojo. Campaign copy/media and recovered third-party source are not claimed as original sole-authored work. The repository is currently public under the owner’s visibility setting. No hosted website deployment is part of this review.
