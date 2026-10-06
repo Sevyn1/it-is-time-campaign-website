@@ -1,2 +1,0 @@
-"# IT-IS-TIME-"  initgit add README.mdgit commit -m "firecho "# IT-IS-TIME-" >> README.mdgit initgit add README.mdgit commit -m "first commit"git branch -M maingit remote add origin https://github.com/Sevyn1/IT-IS-TIME-.gitgit push -u origin main
-"# IT-IS-TIME-"  init

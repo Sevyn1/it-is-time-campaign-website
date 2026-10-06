@@ -1,13 +1,47 @@
-# It Is Time — Campaign Website
+# It Is Time — Campaign Archive
 
-An archived HTML/CSS/JavaScript campaign website, with a landing page, gallery and policy/topic pages. This is a static website project; it is not a Python, Java, React or machine-learning application.
+A restored HTML, CSS and JavaScript campaign website with a cohesive responsive layout, nine original policy articles, the preserved biography, searchable topics, an accessible photograph viewer and an on-demand video player.
 
-## Local preview
+**HTML · CSS · JavaScript · Static content · Python build/check tools**
 
-Run `python3 -m http.server 8085 --bind 127.0.0.1` from this folder and open `http://127.0.0.1:8085/`. Do not submit legacy forms during review; their live destination has not been verified.
+![Restored homepage](docs/preview.png)
 
-## October 2026 maintenance
+This is historical material from the campaign for the 2023 election cycle, not an active campaign or a statement of current government policy. It is a frontend project; it does not claim Python backend, Java, React or machine-learning functionality.
 
-Removed stale references to missing, unused slider scripts/styles and repaired shared navigation and gallery imagery. Removed a missing Cloudflare email-decoder script reference. Existing page copy, campaign identity and vendor headers were retained.
+## Run locally
 
-Third-party theme/plugin assets retain their own authorship and licenses. This repository does not claim those libraries were written by Favour. Runtime vendor behavior, live forms and production hosting have not been tested in this review.
+From the repository root:
+
+```sh
+python3 -m http.server 8088 --bind 127.0.0.1
+```
+
+Open http://127.0.0.1:8088/. No API key, database or package installation is required. Port 8088 avoids the separate freight-calculator preview.
+
+## Working flows
+
+- Shared desktop navigation, a mobile menu with expanded-state semantics, keyboard focus styles and a skip-to-content link.
+- A searchable topic index with matching counts, an empty state and a clear-search action. Search covers titles and summaries, not full article text.
+- All nine original topic pages, with next/previous navigation. Longer articles and the biography include an in-page contents list.
+- Eleven original photographs, opened in a modal with previous/next actions, arrow-key navigation, Escape dismissal and native focus return. Homepage photograph links open the corresponding viewer.
+- The original local video opens on demand, with playback controls; it does not autoplay or download on page load. Closing the dialog pauses playback.
+- Download links to the original plan PDF. File size is shown before download.
+- Archive notices distinguish original campaign statements from current information. No live signup, mailing-list, contact or donation submission is provided.
+
+## Update content
+
+`content/archive.json` contains the preserved article HTML, biography and photograph paths. To regenerate the maintained pages:
+
+```sh
+python3 scripts/build.py
+python3 scripts/check_site.py
+node --check assets/site.js
+```
+
+The generator uses Python's standard library; the website itself is static. CI rebuilds the pages, rejects uncommitted generated differences, checks local resources/anchors and validates JavaScript syntax. No third-party frontend libraries, fonts, trackers or embedded services are loaded by the maintained pages.
+
+## Review and provenance
+
+[Verification](docs/VERIFICATION.md) records completed checks and remaining limits. [Provenance](docs/PROVENANCE.md) explains preserved material, third-party history and the restoration work.
+
+Existing history is retained. The October 2026 design and implementation were developed with Codex assistance, directed and reviewed by Favour Ojo. Campaign copy/media and recovered third-party source are not claimed as original sole-authored work. The repository remains private; no public deployment is claimed.

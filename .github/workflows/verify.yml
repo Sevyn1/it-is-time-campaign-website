@@ -1,10 +1,19 @@
-name: Static reference check
+name: Verify static site
 on: [push, pull_request]
 permissions:
   contents: read
 jobs:
-  check:
+  verify:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
-      - run: python3 scripts/check_links.py
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python scripts/build.py
+      - run: git diff --exit-code -- index.html plan.html gallery.html itistime/*.html
+      - run: python scripts/check_site.py
+      - run: node --check assets/site.js
